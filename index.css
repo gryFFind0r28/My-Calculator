@@ -1,0 +1,105 @@
+ody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0; /* Remove default body margin */
+}
+
+.calculator {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 300px; /* Fixed width for the calculator */
+    background-color: #333;
+    padding: 20px;
+}
+
+.display {
+    background-color: #222;
+    color: #0f0; /* Green LED-like text */
+    font-size: 2.5em;
+    padding: 10px;
+    text-align: right; /* Align text to the right */
+    border-radius: 5px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 40px;
+    line-height: 40px;
+    box-sizing: border-box; /* Include padding in height calculation */
+}
+
+/* --- Table specific styling --- */
+.buttons-table {
+    width: 100%; /* Make the table fill the calculator width */
+    border-collapse: separate; /* Allows gap between cells */
+    border-spacing: 10px; /* Creates the space between buttons */
+}
+
+.buttons-table td {
+    padding: 0; /* Remove default cell padding */
+    text-align: center; /* Center the button in its cell */
+    vertical-align: middle; /* Vertically center the button in its cell */
+}
+
+.btn {
+    /* Existing button styles */
+    background-color: #555;
+    color: white;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    user-select: none; /* Prevent text selection on buttons */
+
+    /* Ensure buttons fill their table cells and maintain aspect ratio */
+    width: 100%;
+    /* This height helps maintain a square-ish aspect. Adjust as needed. */
+    padding-top: calc(100% - 30px); /* Height proportional to width for square buttons (adjust 30px for font-size/padding) */
+    padding-bottom: 0px; /* Reset bottom padding from `padding: 15px;` */
+    line-height: 0; /* Align text vertically within the button */
+    display: flex; /* Use flexbox to center content */
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:hover {
+    background-color: #777;
+}
+
+.btn:active {
+    background-color: #999;
+    transform: translateY(1px); /* Slight press effect */
+}
+
+/* Specific button colors */
+.btn.operator {
+    background-color: #ff9900; /* Orange for operators */
+}
+
+.btn.operator:hover {
+    background-color: #ffa520;
+}
+
+.btn.equals {
+    background-color: #00cc66; /* Green for equals */
+    /* For equals button, adjust padding to look good with rowspan */
+    padding-top: calc(200% - 40px); /* Roughly double height, minus padding adjustments */
+    padding-bottom: 0px;
+}
+
+.btn.equals:hover {
+    background-color: #00e673;
+}
+
+.btn.clear {
+    background-color: #cc0000; /* Red for clear */
+}
+
+.btn.clear:hover {
+    background-color: #e60000;
+}
